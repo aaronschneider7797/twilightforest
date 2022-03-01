@@ -3,21 +3,27 @@ buildscript {
         mavenCentral()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url = "https://maven.minecraftforge.net/"
         }
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        maven {
+            name 'Curseforge Maven'
+            url 'https://minecraft.curseforge.com/api/maven/'
+        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
+            changing = true
+        }
     }
 }
 
 apply plugin: 'forge'
 
-version = "2.3.8dev"
+version = "2.3.8patch1"
 group= "twilightforest" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "twilightforest-1.7.10"
 
@@ -39,9 +45,8 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
-    
-    compile files('libs/Thaumcraft-deobf-1.7.10-4.2.3.5.jar')
-    
+
+    //compile "thaumcraft:Thaumcraft:1.7.10:4.2.3.5"
 }
 
 processResources

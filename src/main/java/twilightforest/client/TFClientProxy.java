@@ -582,19 +582,19 @@ public class TFClientProxy extends TFCommonProxy {
 	
 	public void doBlockAnnihilateEffect(World worldObj, int blockX, int blockY, int blockZ) {
 		// particles from the block?
-//		for (int i = 0; i < 10; i++) {
-//	        
-//	        double d0 = worldObj.rand.nextGaussian() * 0.02D;
-//	        double d1 = worldObj.rand.nextGaussian() * 0.02D;
-//	        double d2 = worldObj.rand.nextGaussian() * 0.02D;
-//
-//	        float dx = blockX + 0.5F + (worldObj.rand.nextFloat() - worldObj.rand.nextFloat()) * 0.4F;
-//	        float dy = blockY + 0.5F + (worldObj.rand.nextFloat() - worldObj.rand.nextFloat()) * 0.4F;
-//	        float dz = blockZ + 0.5F + (worldObj.rand.nextFloat() - worldObj.rand.nextFloat()) * 0.4F;
-//
-//			TwilightForestMod.proxy.spawnParticle(worldObj, "annihilate", dx, dy, dz, d0, d1, d2);
-//
-//		}
+		for (int i = 0; i < 10; i++) {
+
+	        double d0 = worldObj.rand.nextGaussian() * 0.02D;
+	        double d1 = worldObj.rand.nextGaussian() * 0.02D;
+	        double d2 = worldObj.rand.nextGaussian() * 0.02D;
+
+	        float dx = blockX + 0.5F + (worldObj.rand.nextFloat() - worldObj.rand.nextFloat()) * 0.4F;
+	        float dy = blockY + 0.5F + (worldObj.rand.nextFloat() - worldObj.rand.nextFloat()) * 0.4F;
+	        float dz = blockZ + 0.5F + (worldObj.rand.nextFloat() - worldObj.rand.nextFloat()) * 0.4F;
+
+			TwilightForestMod.proxy.spawnParticle(worldObj, "annihilate", dx, dy, dz, d0, d1, d2);
+
+		}
 		
 		
         byte four = 4;
@@ -621,5 +621,4 @@ public class TFClientProxy extends TFCommonProxy {
             }
         }
 	}
-
 }

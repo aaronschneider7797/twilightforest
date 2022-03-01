@@ -76,13 +76,18 @@ public class EntityTFUrGhast extends EntityTFTowerGhast implements IBossDisplayD
     	
     	this.setInTantrum(false);
 
-    	this.damageUntilNextPhase = 35;
+    	this.damageUntilNextPhase = 45;
     	
         this.experienceValue = 317;
         
         this.noTrapMode = false;
 
 	}
+	
+//    public int getMaxHealth()
+//    {
+//        return 250;
+//    }
     
 	/**
 	 * Set monster attributes
@@ -93,22 +98,6 @@ public class EntityTFUrGhast extends EntityTFTowerGhast implements IBossDisplayD
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(250); // max health
     }
-
-	/**
-	 * Returns the current armor value as determined by a call to InventoryPlayer.getTotalArmorValue
-	 */
-	@Override
-	public int getTotalArmorValue()
-	{
-		int var1 = super.getTotalArmorValue() + 24;
-
-		if (var1 > 20)
-		{
-			var1 = 20;
-		}
-
-		return var1;
-	}
 	
 	@Override
     protected void entityInit()
@@ -230,7 +219,7 @@ public class EntityTFUrGhast extends EntityTFTowerGhast implements IBossDisplayD
 		
         WorldInfo worldInfo = MinecraftServer.getServer().worldServers[0].getWorldInfo();
 		
-		System.out.println("Starting rain and thunder.  world = " + worldObj);
+		//System.out.println("Starting rain and thunder.  world = " + worldObj);
 		
 		worldInfo.setRaining(true);
 		worldInfo.setThundering(true);
@@ -828,6 +817,14 @@ public class EntityTFUrGhast extends EntityTFTowerGhast implements IBossDisplayD
     {
         return (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 0.5F;
     }
+
+	/**
+	 * Needed for boss health bar on the client
+	 */
+//	@Override
+//	public int getBossHealth() {
+//        return this.dataWatcher.getWatchableObjectInt(DATA_BOSSHEALTH);
+//	}
 	
     @Override
 	public void writeEntityToNBT(NBTTagCompound nbttagcompound)
